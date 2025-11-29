@@ -1,0 +1,440 @@
+:root {
+    --bg: #050509;
+    --bg-elevated: #14141c;
+    --bg-elevated-soft: #191926;
+    --bg-header: #161633;
+    --border-subtle: #2b2b3a;
+    --text-main: #f5f5f7;
+    --text-muted: #a1a1b5;
+    --accent: #7c4dff;
+    --accent-soft: #332258;
+    --accent-yellow: #ffd966;
+    --danger: #ff4d6a;
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 999px;
+    --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #261d4d 0, #050509 50%, #020208 100%);
+    color: var(--text-main);
+    font-family: var(--font-main);
+}
+
+/* ---------- Layout / base.html ---------- */
+
+header {
+    padding: 16px 26px;
+    background: var(--bg-header);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-yellow);
+}
+
+header nav {
+    margin-top: 6px;
+}
+
+header nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-right: 14px;
+}
+
+header nav a:hover {
+    color: var(--accent-yellow);
+}
+
+main.container {
+    max-width: 1100px;
+    margin: 28px auto 40px;
+    padding: 0 18px 40px;
+}
+
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 35px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ---------- Global link / text styles ---------- */
+
+a {
+    color: var(--accent-yellow);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.link-back {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.link-back:hover {
+    color: var(--accent-yellow);
+}
+
+/* ---------- Page headers ---------- */
+
+.page-title {
+    margin: 0 0 18px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.user-name {
+    color: var(--accent-yellow);
+}
+
+/* ---------- Users page (index.html) ---------- */
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 26px;
+}
+
+.user-card {
+    background: var(--bg-elevated-soft);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    border: 1px solid var(--accent-soft);
+    box-shadow: var(--shadow-soft);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.user-name-card {
+    margin: 4px 0 14px;
+    font-size: 1.2rem;
+}
+
+.add-user-card {
+    background: var(--bg-elevated-soft);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px 20px;
+    border: 1px solid var(--accent-soft);
+    box-shadow: var(--shadow-soft);
+
+
+    width: 50%;
+    min-width: 300px;
+    max-width: 480px;
+
+    margin: 30px auto 0 auto;
+}
+
+.add-user-card h3 {
+    margin: 0 0 10px;
+}
+
+.add-user-form {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.add-user-form .input {
+    flex: 1;
+}
+
+/* ---------- Movie grid and cards ---------- */
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+    justify-items: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+}
+.movie-card {
+    background: var(--bg-elevated-soft);
+    border-radius: var(--radius-lg);
+    padding: 14px 16px;
+    border: 1px solid var(--accent-soft);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Poster placeholder – adjust later when you have real images */
+.movie-poster {
+    width: 100%;
+    height: 260px;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #26263a, #181822);
+    margin-bottom: 12px;
+}
+
+/* Body of the card */
+
+.movie-body {
+    flex: 1 1 auto;
+}
+
+.movie-title-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.movie-title-input {
+    width: 100%;
+}
+
+.movie-meta p {
+    margin: 2px 0;
+    font-size: 0.9rem;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: var(--accent-yellow);
+}
+
+.movie-id {
+    color: var(--text-muted);
+}
+
+/* Delete button area */
+
+.movie-delete-form {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* ---------- Add movie card ---------- */
+
+.add-movie-card {
+    background: var(--bg-elevated-soft);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    border: 1px solid var(--accent-soft);
+    box-shadow: var(--shadow-soft);
+
+    width: 50%;
+    min-width: 300px;
+    max-width: 480px;
+
+    margin: 30px auto 0 auto;
+}
+
+.add-movie-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.add-movie-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.add-movie-form .input {
+    flex: 1 1 220px;
+}
+
+/* ---------- Inputs ---------- */
+
+.input {
+    background: #101018;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    padding: 8px 10px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent-soft);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    border-radius: 8px;
+    border: none;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease, opacity 0.1s ease;
+}
+
+.btn-pill {
+    border-radius: var(--radius-sm);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(124, 77, 255, 0.45);
+}
+
+.btn-primary:hover {
+    background: #8e66ff;
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #ff6f83;
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ---------- Empty state text ---------- */
+
+.empty-state {
+    margin: 12px 0 26px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --------- Movie posters ------*/
+
+.movie-poster {
+    width: 100%;
+    height: 260px;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #26263a, #181822);
+    margin-bottom: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.poster-placeholder {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ---------- Error Pages ---------- */
+
+.error-page {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.error-title {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--accent-yellow, #F7D147);
+    margin-bottom: 10px;
+}
+
+.error-message {
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+    color: var(--text-muted, #aaa);
+}
+
+/* ---------- Flash Messages ---------- */
+
+.flash-container {
+    margin-bottom: 18px;
+}
+
+.flash {
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+}
+
+/* success, error, warning use your purple/yellow/danger theme */
+
+.flash-success {
+    background: rgba(76, 175, 80, 0.15);
+    border: 1px solid #4CAF50;
+    color: #c5e1c5;
+}
+
+.flash-error {
+    background: rgba(255, 77, 106, 0.15);
+    border: 1px solid #ff4d6a;
+    color: #ffd5dd;
+}
+
+.flash-warning {
+    background: rgba(255, 217, 102, 0.15);
+    border: 1px solid #ffd966;
+    color: #fff2c2;
+}
+
+.flash {
+    animation: fadeOutCollapse 2s ease-in forwards;
+    animation-delay: 2s;
+}
+
+@keyframes fadeOutCollapse {
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+}

@@ -18,6 +18,8 @@ class Movie(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     year = db.Column(db.Integer, nullable=True)
+    director = db.Column(db.String(120), nullable=True)
+    poster_url = db.Column(db.String(300), nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     # Relationship helper
