@@ -1,4 +1,4 @@
-    # 🎬 Movie Web App (Flask)
+# 🎬 Movie Web App (Flask)
 
 Eine kleine, moderne Web-App zum Verwalten von Lieblingsfilmen — inkl. User-Management, OMDb-Anbindung, dynamischen Seiten, Templates, Flash-Nachrichten, und einer responsiven UI.
 
