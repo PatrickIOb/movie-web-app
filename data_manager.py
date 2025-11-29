@@ -39,3 +39,4 @@ class DataManager():
             db.session.commit()
             return True
         return False
+

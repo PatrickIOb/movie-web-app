@@ -27,3 +27,4 @@ class Movie(db.Model):
         return '<Movie %r>' % self.title
     def __str__(self):
         return f"{self.title} with id: {self.id} and publication year: {self.year}"
+
