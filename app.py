@@ -15,7 +15,7 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key')
 app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(basedir, 'data/movies.db')}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db.init_app(app)  # Link the database and the app. This is the reason you need to import db from models
+db.init_app(app)
 
 data_manager = DataManager()
 
@@ -74,7 +74,7 @@ def index():
 @app.route('/users', methods=['POST'])
 def add_user():
     """handle form to add new user and then redirect to homepage"""
-    name = request.form['name']  # the form field will be called 'name'
+    name = request.form['name']
     data_manager.create_user(name)
     return redirect(url_for('index'))
 
@@ -120,7 +120,7 @@ def movies(user_id):
         if saved is None:
             flash("There was a problem saving the movie to the database.", "error")
 
-        # Post/Redirect/GET pattern
+
         return redirect(url_for('movies', user_id=user_id))
 
     user = User.query.get_or_404(user_id)
